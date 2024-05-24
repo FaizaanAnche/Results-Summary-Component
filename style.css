@@ -1,0 +1,241 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: HankenGrotesk;
+}
+
+:root{
+    /* gradients */
+    --light-lavender:hsl(241, 100%, 89%);
+    --light-lavender-bg: hsl(241, 100%, 95%);
+    --violet-blue: hsla(256, 72%, 46%, 1);
+    --persian-blue: hsla(241, 72%, 46%, 0);
+    --light-slate-blue: hsl(252, 100%, 67%);
+    --light-royal-blue:hsl(241, 81%, 54%);
+
+    /* neutral */
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+    --light-grey: hsl(0, 0%, 50%);
+
+    /* score colors */
+    --cobalt-blue:hsl(234, 85%, 45%);
+    --cobalt-blue-bg:hsl(234, 85%, 98%);
+    --Light-red: hsl(0, 100%, 67%);
+    --light-red-bg: hsl(0, 100%, 98%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --orange-yellow-bg:hsl(39, 100%, 98%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --green-teal-bg: hsl(166, 100%, 98%);
+}
+
+p, span{
+    font-size: 18px;
+}
+
+@font-face {
+    font-family:'HankenGrotesk' ;
+    src: url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+/* -------------------------- */
+
+.results-container{
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------------- */
+
+.result{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   color: white;
+   background-image: linear-gradient(var(--light-slate-blue),var(--light-royal-blue));
+   border-bottom: 1px solid black;
+   border-bottom-left-radius: 30px;
+   border-bottom-right-radius: 30px;
+   padding: 40px;
+}
+
+.result > p{
+    color: var(--light-lavender);
+    min-width: 300px;
+    max-width: 70%;
+}
+
+.result > span{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.total-score{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+
+.circle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+    border-radius: 50%;
+    background-image: linear-gradient(var(--violet-blue),var(--persian-blue));
+}
+
+.circle p{
+    color: var(--light-lavender);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* ------------------------------ */
+
+.summary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.summary span{
+    align-self: flex-start;
+    font-weight: 600;
+}
+
+.summary svg{
+    vertical-align:-0.2em;
+    margin-right: 10px;
+}
+
+.score-card{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px;
+    padding: 1rem;
+    font-weight: 600;
+    border-radius: 10px;    
+}
+
+.reaction{
+    margin-top: 20px;
+    color: var(--Light-red);
+    background-color: var(--light-red-bg);
+}
+
+.memory{
+    color: var(--Orangey-yellow);
+    background-color: var(--orange-yellow-bg);
+}
+
+.verbal{
+    color: var(--Green-teal);
+    background-color: var(--green-teal-bg);
+}
+
+.visual{
+    color: var(--cobalt-blue);
+    background-color: var(--cobalt-blue-bg);
+}
+
+.score{
+    color: var(--Dark-gray-blue);
+}
+
+.max-score{
+    color: var(--light-grey);
+    opacity: 0.6;
+}
+
+
+/* ----------------------------- */
+
+.continue-btn{
+    background-color: var(--Dark-gray-blue);
+    color: white;
+    padding: 0px;
+    text-align: center;
+    border-radius: 40px;
+    padding: 20px;
+    width:100%;
+    margin-top: 10px;
+    font-weight: 600;
+    border: 2px solid white;
+}
+
+.continue-btn:hover{
+    background-color: var(--light-lavender-bg);
+    color: var(--Dark-gray-blue);
+    border-color: var(--Dark-gray-blue);
+    transition: 0.2s;
+}
+
+/* ------------------------------ */
+
+@media only screen and (min-width:768px) {
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .results-container{
+        height: 480px;
+        flex-direction: row;
+        border-radius: 30px;
+        box-shadow: 10px 10px 70px var(--light-lavender-bg);
+    }
+
+    .result{
+        border-radius: 30px;
+        padding: 20px;
+    }
+
+    .result > p{
+        font-size: 1.3rem;
+        max-width: 320px;
+    }
+
+    .circle{
+        height: 200px;
+        width: 200px;
+    }
+
+    .total-score{
+        font-size: 4rem;
+    }
+
+    .circle p{
+        font-size: 1.2rem;
+    }
+
+    .result-top{
+        margin-bottom: 20px;
+    }
+
+    .summary{
+        justify-content: center;
+    }
+
+    .summary-top{
+        font-size: 1.3rem;
+    }
+
+    .score-card{
+        width: 320px;
+    }
+
+}
+
